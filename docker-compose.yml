@@ -1,0 +1,14 @@
+version: '3'
+services:
+  customer_transaction_app:
+    container_name: customer_transaction_app
+    image: customer-transaction
+    build: .
+    ports:
+      - 8080:8080
+    networks:
+      - customer_transaction_network
+
+networks:
+  customer_transaction_network:
+    driver: bridge
